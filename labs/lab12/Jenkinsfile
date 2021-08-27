@@ -1,0 +1,14 @@
+def app = "maven-code-coverage"  // This variable is global
+node('small') {
+    stage('Stage1') { // for display purposes
+        sh "echo ${app} "
+        app = "my-new-app"
+        sh "echo ${app} "
+    }
+}
+node('large') {
+
+    stage('Stage2') {
+        sh "echo ${app} "
+    }
+}
