@@ -2,7 +2,10 @@ def app = "maven-code-coverage"
 node('small') {
     stage('Build') { // for display purposes
         git branch: 'main', url: 'https://github.com/axel-sirota/jenkins-course/'
-        sh "mvn clean build -f ${app}"
+        sh "mvn clean compile -f ${app}"
+        sh "java -version"
+        sh "mvn -version"
+
     }
     stage('Test') {
         sh "mvn clean test -f ${app}"
