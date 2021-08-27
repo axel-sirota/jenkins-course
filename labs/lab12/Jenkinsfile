@@ -1,7 +1,7 @@
 def app = "maven-code-coverage"  // This variable is global
-app2 = "another-app"
 node('small') {
     stage('Stage1') { // for display purposes
+        def app2 = "another-app"
         sh "echo ${app} "
         sh "echo ${app2} "
         app = "my-new-app"
