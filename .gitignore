@@ -1,3 +1,4 @@
+maven-static-code-analysis/target
 simple-app/target/*
 **/target/*
 # Compiled class file
