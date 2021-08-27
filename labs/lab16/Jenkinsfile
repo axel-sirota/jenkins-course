@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                git branch: 'main', url: "https://github.com/axel-sirota/jenkins-course/"
+                sh "mvn clean package -f simple-app"   
+            }
+        }
+    }
+    post {
+        success {
+            slackSend channel: 'jenkins-ci', message: 'Success'
+        }
+        failure {
+            slackSend channel: 'jenkins-ci', message: 'Build Failed'
+        }
+    }
+}

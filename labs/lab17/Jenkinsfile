@@ -1,0 +1,32 @@
+#!groovy
+@Library('axel-library') _  // The _ is key for it to import the global statements in vars folder
+
+pipeline {
+    agent any
+    stages {
+        stage('Test') {
+            parallel {
+                stage('Branch 1') {
+                    steps {
+                        sh "echo 1"   
+                    }
+                    post {
+                        always {
+                            notification currentBuild.result
+                        }
+                    }
+                }
+                stage('Branch 2') {
+                    steps {
+                        sh "exit 1"
+                    }
+                    post {
+                        always {
+                            notification currentBuild.result
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
