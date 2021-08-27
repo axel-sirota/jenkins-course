@@ -20,7 +20,7 @@ pipeline {
                             values 'windows'
                         }
                         axis {
-                            name 'BROWSER'
+                            name 'ARCHITECTURE'
                             values '32'
                         }
                     }
@@ -28,12 +28,12 @@ pipeline {
                 stages {
                     stage('Build') {
                         steps {
-                            echo "Do Build for ${PLATFORM} - ${BROWSER}"
+                            echo "Do Build for ${PLATFORM} - ${ARCHITECTURE}"
                         }
                     }
                     stage('Test') {
                         steps {
-                            echo "Do Test for ${PLATFORM} - ${BROWSER}"
+                            echo "Do Test for ${PLATFORM} - ${ARCHITECTURE}"
                         }
                     }
                 }
