@@ -1,6 +1,6 @@
 # Exercise 6
 
-- Work from the repo https://github.com/axel-sirota/spring-petclinic (one of the many spring complete examples).
+- Work from the app `maven-code-coverage`.
 
 * Add a Job that gets triggered on any branch
 * It will run the tests

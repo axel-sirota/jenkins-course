@@ -1,0 +1,12 @@
+def app = "maven-code-coverage"
+node('small') {
+    stage('Build') { // for display purposes
+        git branch: 'main', url: 'https://github.com/axel-sirota/jenkins-course/'
+        sh "mvn clean build -f ${app}"
+    }
+    stage('Test') {
+        sh "mvn clean test -f ${app}"
+        junit '**/target/surefire-reports/TEST-*.xml'
+        jacoco buildOverBuild: true, deltaBranchCoverage: '80', deltaClassCoverage: '80', deltaComplexityCoverage: '80', deltaInstructionCoverage: '80', deltaLineCoverage: '80', deltaMethodCoverage: '80'
+    }
+}
