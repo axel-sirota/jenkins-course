@@ -1,8 +1,8 @@
 # Exercise 6
 
-- Work from the app `maven-code-coverage`.
+- Fork the repo into your own Github username. Work from the app `maven-code-coverage`.
 
-* Add a Job that gets triggered on any branch
+* Add a Job that gets triggered on any commit on any branch
 * It will run the tests
 * It will save the test results and code coverage 
 

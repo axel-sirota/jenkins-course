@@ -1,7 +1,7 @@
 # Exercise 9
 
 - Take the job from last exercise and make it parametrized with a single parameter of type Choice to package the App
-- Package the app and archive the JAR when the parameter is True/Yes/Ok
+- Package the app and archive the JAR when the parameter is True
 
 Bonus: Parametrize not from the UI but within the Declarative Pipeline Syntax
 
